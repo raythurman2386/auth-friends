@@ -1,38 +1,36 @@
-import React, { useState } from 'react';
+import React from 'react';
+import useForm from 'react-hook-form';
+import { axiosWithoutAuth } from '../utils/axiosConfig';
 
 const Login = props => {
-  const [credentials, setCredentials] = useState({
-    username: '',
-    password: ''
-  });
-
-  const handleChange = e => {
-    setCredentials({
-      ...credentials,
-      [e.target.name]: e.target.value
-    });
+  const { register, handleSubmit, watch, errors } = useForm();
+  const onSubmit = data => {
+    console.log(data);
   };
 
-  const handleSubmit = e => {
-    e.preventDefault();
-    console.log(credentials);
-  };
+  // console.log(watch('username'));
+  // console.log(watch('password'));
+
+  // { username: 'Lambda School', password: 'i<3Lambd4' }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit(onSubmit)}>
       <h2>Login Component</h2>
+      {errors.username && <span>This field is required</span>}
       <input
         name='username'
-        value={credentials.username}
-        onChange={e => handleChange(e)}
+        ref={register({ required: true })}
+        defaultValue='Lambda School'
         placeholder='Username'
       />
+      {errors.password && <span>This field is required</span>}
       <input
         name='password'
-        value={credentials.password}
-        onChange={e => handleChange(e)}
+        ref={register({ required: true })}
+        defaultValue='i<3Lambd4'
         placeholder='Password'
       />
+
       <button>Submit</button>
     </form>
   );
