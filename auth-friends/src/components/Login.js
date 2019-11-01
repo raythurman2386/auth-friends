@@ -13,13 +13,10 @@ const Login = props => {
       .then(res => {
         console.log(res.data);
         localStorage.setItem('token', res.data.payload);
-        // props.history.push('/dashboard')
+        props.history.push('/dashboard');
       })
       .catch(err => console.log(err.response));
   };
-
-  // console.log(watch('username'));
-  // console.log(watch('password'));
 
   // { username: 'Lambda School', password: 'i<3Lambd4' }
 
