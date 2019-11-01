@@ -1,11 +1,21 @@
 import React from 'react';
 import useForm from 'react-hook-form';
-import { axiosWithoutAuth } from '../utils/axiosConfig';
+import { axiosWithAuth as axios } from '../utils/axiosConfig';
 
 const Login = props => {
   const { register, handleSubmit, watch, errors } = useForm();
+
   const onSubmit = data => {
     console.log(data);
+
+    axios()
+      .post('/login', data)
+      .then(res => {
+        console.log(res.data);
+        localStorage.setItem('token', res.data.payload);
+        // props.history.push('/dashboard')
+      })
+      .catch(err => console.log(err.response));
   };
 
   // console.log(watch('username'));
