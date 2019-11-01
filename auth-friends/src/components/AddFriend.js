@@ -2,18 +2,16 @@ import React from 'react';
 import { axiosWithAuth as axios } from '../utils/axiosConfig';
 import useForm from 'react-hook-form';
 
-const AddFriend = () => {
+const AddFriend = props => {
   const { register, handleSubmit } = useForm();
 
   const onSubmit = data => {
-    console.log(data);
-
-    // axios()
-    //   .post('#', data)
-    //   .then(res => {
-    //     console.log(res.data);
-    //   })
-    //   .catch(err => console.log(err.response));
+    axios()
+      .post('/friends', data)
+      .then(res => {
+        props.history.push('/dashboard');
+      })
+      .catch(err => console.log(err.response));
   };
 
   return (
