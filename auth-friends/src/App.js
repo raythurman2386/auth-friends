@@ -24,7 +24,11 @@ function App(props) {
         {!loggedIn && <Link to='/login'>Login</Link>}
         {loggedIn && <Link to='/dashboard'>Dashboard</Link>}
         {loggedIn && <Link to='/addfriend'>Add Friend</Link>}
-        {loggedIn && <Link onClick={logout}>Logout</Link>}
+        {loggedIn && (
+          <Link to='/' onClick={logout}>
+            Logout
+          </Link>
+        )}
       </nav>
       <Route exact path='/login' component={Login} />
       <PrivateRoute exact path='/dashboard' component={Dashboard} />
