@@ -20,7 +20,7 @@ const Navbar = props => {
     <div className={classes.root}>
       <AppBar position='static' color='secondary'>
         <Toolbar>
-          <Typography variant='h6' className={classes.title}>
+          <Typography variant='h5' className={classes.title}>
             Auth Friends
           </Typography>
           {loggedIn && (
@@ -61,7 +61,8 @@ const useStyles = makeStyles(theme => ({
     marginRight: theme.spacing(2)
   },
   title: {
-    flexGrow: 1
+    flexGrow: 1,
+    fontWeight: 600
   },
   link: {
     textDecoration: 'none',
