@@ -15,6 +15,7 @@ function App(props) {
       <Route exact path='/login' component={Login} />
       <PrivateRoute exact path='/dashboard' component={Dashboard} />
       <PrivateRoute exact path='/addfriend' component={AddFriend} />
+      <Route component={Login} />
     </div>
   );
 }
