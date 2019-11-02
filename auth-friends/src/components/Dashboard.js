@@ -20,7 +20,7 @@ const Dashboard = () => {
 
   return (
     <div className={classes.root}>
-      <Grid container spacing={3}>
+      <Grid container spacing={3} className={classes.container}>
         {friends &&
           friends.map(item => (
             <Grid key={item.id} item xs={3}>
@@ -39,13 +39,22 @@ export default Dashboard;
 // Material Styles
 const useStyles = makeStyles(theme => ({
   root: {
-    flexGrow: 1,
     width: '80%',
     margin: '2rem auto'
   },
+  container: {
+    display: 'flex',
+    flexWrap: 'wrap',
+    justifyContent: 'space-evenly',
+    alignItems: 'center',
+    maxWidth: '98%'
+  },
   paper: {
-    padding: theme.spacing(2),
+    padding: theme.spacing(1),
+    margin: '1rem auto 0',
     textAlign: 'center',
-    color: theme.palette.text.secondary
+    color: theme.palette.text.secondary,
+    width: 325,
+    height: 200
   }
 }));
