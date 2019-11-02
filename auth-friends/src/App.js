@@ -30,6 +30,6 @@ export default App;
 const useStyles = makeStyles(theme => ({
   app: {
     width: '100%',
-    margin: 'auto'
+    margin: '0 auto'
   }
 }));

@@ -19,16 +19,16 @@ const Dashboard = () => {
   }, []);
 
   return (
-    <div className={classes.root}>
+    <Grid container className={classes.root}>
       {friends &&
         friends.map(item => (
-          <Grid key={item.id} item xs={3}>
+          <Grid key={item.id} item xs={6} sm={3}>
             <Paper className={classes.paper}>
               <Friend friend={item} />
             </Paper>
           </Grid>
         ))}
-    </div>
+    </Grid>
   );
 };
 
@@ -37,6 +37,7 @@ export default Dashboard;
 // Material Styles
 const useStyles = makeStyles(theme => ({
   root: {
+    boxSizing: 'border-box',
     maxWidth: '1280px',
     margin: '0 auto',
     display: 'grid',
