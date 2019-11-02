@@ -23,8 +23,8 @@ const Dashboard = () => {
       <Grid container spacing={3}>
         {friends &&
           friends.map(item => (
-            <Grid item xs={3}>
-              <Paper key={item.id} className={classes.paper}>
+            <Grid key={item.id} item xs={3}>
+              <Paper className={classes.paper}>
                 <Friend friend={item} />
               </Paper>
             </Grid>
