@@ -20,16 +20,14 @@ const Dashboard = () => {
 
   return (
     <div className={classes.root}>
-      <Grid container spacing={3} className={classes.container}>
-        {friends &&
-          friends.map(item => (
-            <Grid key={item.id} item xs={3}>
-              <Paper className={classes.paper}>
-                <Friend friend={item} />
-              </Paper>
-            </Grid>
-          ))}
-      </Grid>
+      {friends &&
+        friends.map(item => (
+          <Grid key={item.id} item xs={3}>
+            <Paper className={classes.paper}>
+              <Friend friend={item} />
+            </Paper>
+          </Grid>
+        ))}
     </div>
   );
 };
@@ -39,22 +37,19 @@ export default Dashboard;
 // Material Styles
 const useStyles = makeStyles(theme => ({
   root: {
-    width: '80%',
-    margin: '2rem auto'
-  },
-  container: {
-    display: 'flex',
-    flexWrap: 'wrap',
-    justifyContent: 'space-evenly',
-    alignItems: 'center',
-    maxWidth: '98%'
+    maxWidth: '1280px',
+    margin: '0 auto',
+    display: 'grid',
+    padding: '1rem',
+    gridTemplateColumns: 'repeat(auto-fill, minmax(400px, 1fr))',
+    gridRowGap: '2rem'
   },
   paper: {
     padding: theme.spacing(1),
     margin: '1rem auto 0',
     textAlign: 'center',
     color: theme.palette.text.secondary,
-    width: 325,
+    width: '325px',
     height: 200
   }
 }));

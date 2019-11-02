@@ -38,6 +38,6 @@ const useStyles = makeStyles(theme => ({
     flexDirection: 'column',
     justifyContent: 'space-evenly',
     alignItems: 'center',
-    maxWidth: '98%'
+    maxWidth: '100%'
   }
 }));
