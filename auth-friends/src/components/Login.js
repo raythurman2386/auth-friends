@@ -101,8 +101,6 @@ const Login = props => {
   );
 };
 
-// { username: 'Lambda School', password: 'i<3Lambd4' }
-
 export default Login;
 
 // Copyright for the site
