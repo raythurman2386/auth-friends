@@ -23,8 +23,26 @@ export default function Navar(props) {
           <Typography variant='h6' className={classes.title}>
             Auth Friends
           </Typography>
+          {loggedIn && (
+            <Button color='inherit'>
+              <Link className={classes.link} to='/dashboard'>
+                Dashboard
+              </Link>
+            </Button>
+          )}
+          {loggedIn && (
+            <Button color='inherit'>
+              <Link className={classes.link} to='/addfriend'>
+                Add Friend
+              </Link>
+            </Button>
+          )}
           <Button color='inherit'>
-            {!loggedIn && <Link to='/login'>Login</Link>}
+            {!loggedIn && (
+              <Link className={classes.link} to='/login'>
+                Login
+              </Link>
+            )}
             {loggedIn && <span onClick={() => logout()}>Logout</span>}
           </Button>
         </Toolbar>
@@ -42,5 +60,9 @@ const useStyles = makeStyles(theme => ({
   },
   title: {
     flexGrow: 1
+  },
+  link: {
+    textDecoration: 'none',
+    color: 'white'
   }
 }));
