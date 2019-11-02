@@ -30,6 +30,9 @@ export default App;
 const useStyles = makeStyles(theme => ({
   app: {
     width: '100%',
-    margin: '0 auto'
+    margin: '0 auto',
+    backgroundColor: '#222',
+    color: 'white',
+    height: '100vh'
   }
 }));
