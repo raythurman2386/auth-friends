@@ -54,7 +54,6 @@ const AddFriend = props => {
                 label='Friend Name'
                 autoFocus
                 inputRef={register}
-                InputProps={{ className: classes.input }}
               />
             </Grid>
             <Grid item xs={12}>
@@ -119,8 +118,7 @@ const useStyles = makeStyles(theme => ({
   },
   form: {
     width: '100%', // Fix IE 11 issue.
-    marginTop: theme.spacing(3),
-    color: 'white'
+    marginTop: theme.spacing(3)
   },
   input: {
     color: '#888'

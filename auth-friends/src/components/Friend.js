@@ -1,4 +1,5 @@
 import React from 'react';
+import { axiosWithAuth as axios } from '../utils/axiosConfig';
 
 // Material Items
 import Typography from '@material-ui/core/Typography';
@@ -7,6 +8,14 @@ import { makeStyles } from '@material-ui/core/styles';
 
 const Friend = props => {
   const classes = useStyles();
+
+  const handleDelete = (e, id) => {
+    e.preventDefault();
+    axios()
+      .delete(`/friends/${id}`)
+      .then(res => console.log(res))
+      .catch(err => console.log(err.response));
+  };
 
   return (
     <div className={classes.container}>
@@ -19,10 +28,21 @@ const Friend = props => {
       <Typography variant='h6' component='h6'>
         {props.friend.email}
       </Typography>
-      <Button fullWidth color='primary'>
+      <Button
+        className={classes.buttons}
+        fullWidth
+        variant='contained'
+        color='primary'
+      >
         Edit
       </Button>
-      <Button fullWidth color='secondary'>
+      <Button
+        className={classes.buttons}
+        fullWidth
+        variant='contained'
+        color='secondary'
+        onClick={e => handleDelete(e, props.friend.id)}
+      >
         Delete
       </Button>
     </div>
@@ -39,5 +59,8 @@ const useStyles = makeStyles(theme => ({
     justifyContent: 'space-evenly',
     alignItems: 'center',
     maxWidth: '100%'
+  },
+  buttons: {
+    marginTop: '8px'
   }
 }));

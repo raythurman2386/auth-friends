@@ -135,7 +135,7 @@ const useStyles = makeStyles(theme => ({
 
 export const Copyright = () => {
   return (
-    <Typography variant='body2' color='white' align='center'>
+    <Typography variant='body2' align='center'>
       {'Copyright © '}
       <Link color='inherit' href='#'>
         Auth Friends

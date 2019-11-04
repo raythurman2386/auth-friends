@@ -8,7 +8,6 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import Paper from '@material-ui/core/Paper';
-import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
 
 const Dashboard = () => {
@@ -20,7 +19,7 @@ const Dashboard = () => {
       .get('/friends')
       .then(res => setFriends(res.data))
       .catch(err => console.log(err));
-  }, []);
+  }, [friends]);
 
   return (
     <>
@@ -28,7 +27,7 @@ const Dashboard = () => {
       <Container component='main' className={classes.root} maxWidth='lg'>
         {friends &&
           friends.map(item => (
-            <Paper className={classes.paper}>
+            <Paper key={item.id} className={classes.paper}>
               <Friend friend={item} />
             </Paper>
           ))}
