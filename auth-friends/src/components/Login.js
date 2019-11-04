@@ -91,9 +91,9 @@ const Login = props => {
             >
               Sign In
             </Button>
-            <Box mt={5}>
+            {/* <Box mt={5}>
               <Copyright />
-            </Box>
+            </Box> */}
           </form>
         </div>
       </Grid>
