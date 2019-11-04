@@ -1,14 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { axiosWithAuth } from '../utils/axiosConfig';
 import Friend from './Friend';
-import { Copyright } from './Login';
 
 // Material
 import CssBaseline from '@material-ui/core/CssBaseline';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import Paper from '@material-ui/core/Paper';
-import Box from '@material-ui/core/Box';
 
 const Dashboard = () => {
   const classes = useStyles();
@@ -32,9 +30,9 @@ const Dashboard = () => {
             </Paper>
           ))}
       </Container>
-      <Box mt={5}>
+      {/* <Box mt={5}>
         <Copyright />
-      </Box>
+      </Box> */}
     </>
   );
 };

@@ -137,7 +137,7 @@ export const Copyright = () => {
   return (
     <Typography variant='body2' align='center'>
       {'Copyright © '}
-      <Link color='inherit' href='#'>
+      <Link color='primary' href='#'>
         Auth Friends
       </Link>{' '}
       {new Date().getFullYear()}
