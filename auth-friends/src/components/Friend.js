@@ -30,6 +30,7 @@ const Friend = props => {
       .then(res => console.log(res))
       .catch(err => console.log(err));
     setIsEditing(false);
+    // props.history.push('/dashboard');
   };
 
   const handleDelete = (e, id) => {
